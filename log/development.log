@@ -1436,3 +1436,87 @@ Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde45
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 127.0.0.1 at 2015-06-20 14:07:58 -0300
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:14:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 755ms (Views: 744.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/scaffolds.self-0e373e61a79e8bc26df90e2dcfc9f6981fca3461ac35c5634406820262a242c0.css?body=1" for 127.0.0.1 at 2015-06-20 15:14:12 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:56:00 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 260ms (Views: 250.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:56:07 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mSW3hm5v8cEfp2DwiyeQX4Ehop8DN6/jQA5gXdEyp5+admeabDrI8qVdOPLzgF+otdrDfxk4npQ0fk7qC7ayvA==", "session"=>{"email"=>"fillipe_menezes@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe_menezes@yahoo.com.br"]]
+Redirected to http://127.0.0.1:3000login
+Completed 302 Found in 16ms (ActiveRecord: 0.7ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:56:07 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mSW3hm5v8cEfp2DwiyeQX4Ehop8DN6/jQA5gXdEyp5+admeabDrI8qVdOPLzgF+otdrDfxk4npQ0fk7qC7ayvA==", "session"=>{"email"=>"fillipe_menezes@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe_menezes@yahoo.com.br"]]
+Redirected to http://127.0.0.1:3000login
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:56:12 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mSW3hm5v8cEfp2DwiyeQX4Ehop8DN6/jQA5gXdEyp5+admeabDrI8qVdOPLzgF+otdrDfxk4npQ0fk7qC7ayvA==", "session"=>{"email"=>"fillipe_menezes@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe_menezes@yahoo.com.br"]]
+Redirected to http://127.0.0.1:3000login
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 15:56:16 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 105ms (Views: 86.3ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-06-20 15:56:23 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RFVVcgj1o7Z7sbgAM5Sh9E9RkTvvIBPboAckp/1+9eVHBoVuCqCahcFL4AJLM24De6rw2/UvIqzUdwoQJ/rgxg==", "user"=>{"first_name"=>"Fillipe", "last_name"=>"fad", "email"=>"fillipe_menezes@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "fad"], ["email", "fillipe_menezes@yahoo.com.br"], ["password_digest", "$2a$10$SN8F5SSyGyGTpcjbC1qtg.HWs.cOvxTJuC0EMvRipbaAFNgjyZgOC"], ["created_at", "2015-06-20 18:56:23.665260"], ["updated_at", "2015-06-20 18:56:23.665260"]]
+  [1m[36m (495.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 302 Found in 586ms (ActiveRecord: 496.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:56:24 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 5]]
+Completed 200 OK in 96ms (Views: 94.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:56:30 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"MpUxl6cXoyuQI05mT7I05JaCrrekXHGDfo50A/vv0vcxxuGLpUKaGCrZFmQ3FfsTonnPV75TQPQK/lq0IWvH1A==", "session"=>{"email"=>"fillipe_menezes@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe_menezes@yahoo.com.br"]]
+Redirected to http://127.0.0.1:3000/messages
+Completed 302 Found in 87ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:56:30 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (8.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 5]]
+Completed 200 OK in 66ms (Views: 62.6ms | ActiveRecord: 0.6ms)

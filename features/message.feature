@@ -3,7 +3,7 @@ Feature: Messages
   Dado que o usuário está logado o mesmo pode ler as mensagens dos outros usuários
   e postar suas proprias messagens, podendo deletar, atualizar as suas messagens.
 
-com
+
   Scenario: User adds a new message to the system
     Given I am already logged in
     And I am at the messages page
@@ -14,3 +14,10 @@ com
     And I click create button
     Then I should be at the messages page
     And I should see a notice with "Message was successfully created."
+
+    Scenario: User deletes a message
+      Given I am already logged in
+      And I have a message entitled "Amazing Application"
+      And I am at the messages page
+      When I press the "Delete" Button
+      Then The message entitled "Amazing Application" must be destroyed

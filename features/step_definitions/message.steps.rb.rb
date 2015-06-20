@@ -1,3 +1,5 @@
+## Scenario: User adds a new message to the system ##
+
 Given(/^I am already logged in$/) do
   @user = FactoryGirl.create(:user)
   @user.save
@@ -39,4 +41,21 @@ end
 
 And(/^I should see a notice with "([^"]*)"$/) do |notice|
   page.should have_css("p", :text => notice)
+end
+
+
+
+
+## Scenario: User deletes a message ##
+And(/^I have a message entitled "([^"]*)"$/) do |title|
+  @message = FactoryGirl.create(:message, title: title)
+  @message.save
+end
+
+When(/^I press the "([^"]*)" Button$/) do |arg|
+  click_link "Delete"
+end
+
+Then(/^The message entitled "([^"]*)" must be destroyed$/) do |title|
+  page.should_not have_css("td", :text => title)
 end

@@ -2058,3 +2058,1121 @@ Processing by MessagesController#index as HTML
   Rendered messages/index.html.erb within layouts/application (1.4ms)
 Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms)
   [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$7fOCYqEERWh0qbspKHcsReuaOHYfbBEZNmR96Ql2if96bnhoCl6au"], ["created_at", "2015-06-20 18:49:41.302908"], ["updated_at", "2015-06-20 18:49:41.302908"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:49:41 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 488ms (Views: 478.7ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:49:41 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:49:41 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:49:41 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.4ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:49:41 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (12.2ms)
+  Rendered messages/new.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 25ms (Views: 19.5ms | ActiveRecord: 0.2ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:49:41 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.4ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:49:41.910529"], ["updated_at", "2015-06-20 18:49:41.910529"]]
+  [1m[35m (0.4ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 8ms (ActiveRecord: 1.3ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:49:41 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.4ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$db6MVficuzk.3mPy1iZEqOZa4ar.h8osjxJHhYdxXFt4YUaP5CBs6"], ["created_at", "2015-06-20 18:49:41.949508"], ["updated_at", "2015-06-20 18:49:41.949508"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:49:41 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:49:41 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:49:41 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:49:41 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:49:41.992223"], ["updated_at", "2015-06-20 18:49:41.992223"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$r3eltdz9YSnZ4ilPdSPx7eMp45e7mC8K7QLlD.guRkkWOvzB3j02K"], ["created_at", "2015-06-20 18:50:04.460719"], ["updated_at", "2015-06-20 18:50:04.460719"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:50:04 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 174ms (Views: 164.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:50:04 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:50:04 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:50:04 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:50:04 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (12.0ms)
+  Rendered messages/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 23ms (Views: 17.8ms | ActiveRecord: 0.2ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:50:04 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:50:04.735206"], ["updated_at", "2015-06-20 18:50:04.735206"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:50:04 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.4ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$TkQHf5BJHgmSKB5TYROOo.5dpaWzFk9QaB/14bj3CzNB7eVJuVOvm"], ["created_at", "2015-06-20 18:50:04.757108"], ["updated_at", "2015-06-20 18:50:04.757108"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:50:04 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:50:04 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:50:04 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:50:04 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:50:04.791718"], ["updated_at", "2015-06-20 18:50:04.791718"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$TFGcuXG.jWqs5lpwIzGXYuJbPjep/Ii7WqRHnR/io6DjCCVn7z.OO"], ["created_at", "2015-06-20 18:50:16.657016"], ["updated_at", "2015-06-20 18:50:16.657016"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:50:16 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 176ms (Views: 165.9ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:50:16 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 11ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:50:16 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:50:16 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:50:16 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (9.4ms)
+  Rendered messages/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 21ms (Views: 15.2ms | ActiveRecord: 0.2ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:50:16 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:50:16.929886"], ["updated_at", "2015-06-20 18:50:16.929886"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:50:16 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$jzHTGAiH5pbl9x6RGStnUO2KfegRue4cKlgYZNHaWY0xNwZyjZXe."], ["created_at", "2015-06-20 18:50:16.950190"], ["updated_at", "2015-06-20 18:50:16.950190"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:50:16 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:50:16 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:50:16 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:50:16 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:50:16.983090"], ["updated_at", "2015-06-20 18:50:16.983090"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$m0SWGO/plWXFnOC2wcgccOHtjEaiYGGzZM4QtwPc2ObUMshh4m1Sm"], ["created_at", "2015-06-20 18:51:11.732923"], ["updated_at", "2015-06-20 18:51:11.732923"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:51:11 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 177ms (Views: 167.6ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:51:11 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:51:11 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:51:11 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 7ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:51:11 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (9.5ms)
+  Rendered messages/new.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 20ms (Views: 15.5ms | ActiveRecord: 0.1ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:51:12 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:51:12.004912"], ["updated_at", "2015-06-20 18:51:12.004912"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:51:12 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$eRiWXb2yYWeeHo9I1S4UY.98MOEBI7UHpWX1uYfkOxmksYRxyCXri"], ["created_at", "2015-06-20 18:51:12.029591"], ["updated_at", "2015-06-20 18:51:12.029591"]]
+  [1m[35m (0.3ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:51:12 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:51:12 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:51:12 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:51:12 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:51:12.077417"], ["updated_at", "2015-06-20 18:51:12.077417"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$Wa27BvTKpNH1dIjnP/CU0enrFFRK1kI1fxnOFydTjO8mDOoTUdMhe"], ["created_at", "2015-06-20 18:51:37.348604"], ["updated_at", "2015-06-20 18:51:37.348604"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:51:37 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 178ms (Views: 168.6ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:51:37 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:51:37 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:51:37 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:51:37 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (9.4ms)
+  Rendered messages/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 21ms (Views: 15.4ms | ActiveRecord: 0.1ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:51:37 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:51:37.625822"], ["updated_at", "2015-06-20 18:51:37.625822"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:51:37 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$Ap7td8PydKAfcbqJxwJUm.eJEDtTU7iskhjGhbia5xMrHNtZpXPLq"], ["created_at", "2015-06-20 18:51:37.646219"], ["updated_at", "2015-06-20 18:51:37.646219"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:51:37 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:51:37 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:51:37 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:51:37 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.3ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:51:37.681490"], ["updated_at", "2015-06-20 18:51:37.681490"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$5a3SyKN8x1ZiiRYbgT6jVuxP8997P5PNfDOdoqQnCkIsXFfq1Odfe"], ["created_at", "2015-06-20 18:52:16.697873"], ["updated_at", "2015-06-20 18:52:16.697873"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:52:16 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 181ms (Views: 172.1ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:52:16 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 10ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:52:16 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:52:16 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:52:16 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (10.4ms)
+  Rendered messages/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 21ms (Views: 16.2ms | ActiveRecord: 0.1ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:52:16 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:52:16.976857"], ["updated_at", "2015-06-20 18:52:16.976857"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:52:16 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$KoCax6PPFDEuQ5Bp1uWxHeTbt.R7b7mF3TYanwr5kQ92qfJhhPedC"], ["created_at", "2015-06-20 18:52:16.996508"], ["updated_at", "2015-06-20 18:52:16.996508"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:52:17 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:52:17 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:52:17 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:52:17 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:52:17.027288"], ["updated_at", "2015-06-20 18:52:17.027288"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$G96gK4gwfLMBBeHMpZE93.pet2xQK1zvIwN013i6q.wr/1Kf8Cfei"], ["created_at", "2015-06-20 18:52:36.005782"], ["updated_at", "2015-06-20 18:52:36.005782"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:52:36 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 171ms (Views: 162.0ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:52:36 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:52:36 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:52:36 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:52:36 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (9.6ms)
+  Rendered messages/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 0.1ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:52:36 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:52:36.272557"], ["updated_at", "2015-06-20 18:52:36.272557"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:52:36 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$T0DWD3W45RWDu9GmxgFwm.W8QMGvQzC8iAW91Xv2l.34RonYwPIla"], ["created_at", "2015-06-20 18:52:36.292303"], ["updated_at", "2015-06-20 18:52:36.292303"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:52:36 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:52:36 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:52:36 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:52:36 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:52:36.323429"], ["updated_at", "2015-06-20 18:52:36.323429"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$8IQtCCa128y/VShBOPbjTOssJWzBf.f.LTYxBNgGZxYIHTvy1HnK2"], ["created_at", "2015-06-20 18:53:14.149921"], ["updated_at", "2015-06-20 18:53:14.149921"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:53:14 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 174ms (Views: 164.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:53:14 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:53:14 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:53:14 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:53:14 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (9.7ms)
+  Rendered messages/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 0.1ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:53:14 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:53:14.419310"], ["updated_at", "2015-06-20 18:53:14.419310"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:53:14 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$p18bY3puXnsuICgucFQWOutQ.R9Wna.YJQ.K66GvboSvxjR74iM8K"], ["created_at", "2015-06-20 18:53:14.438832"], ["updated_at", "2015-06-20 18:53:14.438832"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:53:14 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:53:14 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:53:14 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:53:14 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:53:14 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:53:14.476733"], ["updated_at", "2015-06-20 18:53:14.476733"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$xjAyrFUuA9cI0MGRpPyht.hjFEdll7/8xEo2xz/.F30KLjFWOekwS"], ["created_at", "2015-06-20 18:54:05.788134"], ["updated_at", "2015-06-20 18:54:05.788134"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:54:05 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 177ms (Views: 167.2ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:54:05 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:54:06 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:54:06 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.3ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:54:06 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (10.4ms)
+  Rendered messages/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 0.2ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:54:06 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:54:06.062668"], ["updated_at", "2015-06-20 18:54:06.062668"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:54:06 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$o.wX8SipS9RRdV/hRgfh0..cS6En0FpiUcn4UDgTxHbMRW.Hm.E72"], ["created_at", "2015-06-20 18:54:06.083289"], ["updated_at", "2015-06-20 18:54:06.083289"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:54:06 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:54:06 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:54:06 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:54:06.107476"], ["updated_at", "2015-06-20 18:54:06.107476"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:54:06 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+Started DELETE "/messages/1" for 127.0.0.1 at 2015-06-20 15:54:06 -0300
+Processing by MessagesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:54:06 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1[0m  [["id", 0]]
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$4IjebsNGi5qCw.EzYuBWf.6QY3aYLk9ONQjQVc9.GhQ1KUURvaP8."], ["created_at", "2015-06-20 18:54:49.529519"], ["updated_at", "2015-06-20 18:54:49.529519"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 171ms (Views: 162.0ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.3ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (9.2ms)
+  Rendered messages/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 20ms (Views: 15.1ms | ActiveRecord: 0.2ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:54:49.796196"], ["updated_at", "2015-06-20 18:54:49.796196"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$y.Aq2N9hT.vcATj3BZEKBe4URUk6qL5OXvQ2wLt41dM8KL4xC02cq"], ["created_at", "2015-06-20 18:54:49.816319"], ["updated_at", "2015-06-20 18:54:49.816319"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:54:49.840255"], ["updated_at", "2015-06-20 18:54:49.840255"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+Started DELETE "/messages/1" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by MessagesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:54:49 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT  "messages".* FROM "messages" WHERE "messages"."title" = ? LIMIT 1[0m  [["title", "Amazing Application"]]
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$9QKA3FR4SYFzjIbDaSXRXeJcI.v1H1RWJfMG2YV0jJL5owuHb4TEm"], ["created_at", "2015-06-20 18:57:21.341519"], ["updated_at", "2015-06-20 18:57:21.341519"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 172ms (Views: 162.2ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (10.3ms)
+  Rendered messages/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 21ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:57:21.608308"], ["updated_at", "2015-06-20 18:57:21.608308"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$o.jimt9CLIEZRNjs0ZETQOpr2gB2a29d.kRbzjqZQAMrbl4NAB5P2"], ["created_at", "2015-06-20 18:57:21.628681"], ["updated_at", "2015-06-20 18:57:21.628681"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:57:21.652997"], ["updated_at", "2015-06-20 18:57:21.652997"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+Started DELETE "/messages/1" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by MessagesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:57:21 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$v2SsRb3mxThjb2rVCVbhbO8a5ws1.FE/I.USMyB34x3hPzpQKxlrS"], ["created_at", "2015-06-20 18:57:32.514022"], ["updated_at", "2015-06-20 18:57:32.514022"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 172ms (Views: 162.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 7ms (Views: 5.0ms | ActiveRecord: 0.3ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (10.0ms)
+  Rendered messages/new.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 0.2ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:57:32.780111"], ["updated_at", "2015-06-20 18:57:32.780111"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$PDXNLNgXNR9CN2Z3coawienXghZZ/GUbdc35Dq5eJzpjSeW38QFHC"], ["created_at", "2015-06-20 18:57:32.799859"], ["updated_at", "2015-06-20 18:57:32.799859"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:57:32.823981"], ["updated_at", "2015-06-20 18:57:32.823981"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+Started DELETE "/messages/1" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by MessagesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:57:32 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$dVsvkzL/FGgxBlKAb9UbGeP0KCZfxvgqRX4erol2UNNf6.hUOQEM6"], ["created_at", "2015-06-20 18:57:45.222779"], ["updated_at", "2015-06-20 18:57:45.222779"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 172ms (Views: 162.5ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 7ms (Views: 4.5ms | ActiveRecord: 0.3ms)
+Started GET "/messages/new" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (9.4ms)
+  Rendered messages/new.html.erb within layouts/application (13.8ms)
+Completed 200 OK in 21ms (Views: 16.3ms | ActiveRecord: 0.1ms)
+Started POST "/messages" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "message"=>{"title"=>"Amazing Application", "message"=>"This application is super cool e and very..."}, "commit"=>"Create Message"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "This application is super cool e and very..."], ["created_at", "2015-06-20 18:57:45.490725"], ["updated_at", "2015-06-20 18:57:45.490725"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/messages
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$LIZxpqyigdehxRWy2Iku3OR/4zvoNAUzwq0LVPfA2TNNGg9I6adPO"], ["created_at", "2015-06-20 18:57:45.510510"], ["updated_at", "2015-06-20 18:57:45.510510"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.comlogin
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "messages" ("title", "message", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Amazing Application"], ["message", "It's helping me a lot in fact!!!"], ["created_at", "2015-06-20 18:57:45.535102"], ["updated_at", "2015-06-20 18:57:45.535102"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+Started DELETE "/messages/1" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by MessagesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.4ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 15:57:45 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
