@@ -1,4 +1,4 @@
-# Singup #
+## Singup ##
 Given(/^The email "([^"]*)" is not used by an user$/) do |email|
   User.find_by_email(email).should == nil
 end
@@ -32,7 +32,7 @@ Then(/^I should be at root page$/) do
 end
 
 
-# Login #
+## Login ##
 Given(/^I have an user with email "([^"]*)" is registred on the system$/) do |email|
   @user = FactoryGirl.create(:user, email: email)
 end
@@ -55,4 +55,18 @@ end
 
 Then(/^I should be logged in with email "([^"]*)"$/) do |email|
   expect(current_path).to eq('/messages')
+end
+
+
+
+##  The user is redirect to the main page if he is not logged in  ##
+Given(/^I am not logged in$/) do
+  page.should_not have_css("li", text: "Log Out")
+end
+When(/^I try to access "([^"]*)"$/) do |path|
+  visit '/messages'
+end
+
+And(/^I should see the message "([^"]*)"$/) do |notice|
+  page.should have_css("div", text: notice)
 end

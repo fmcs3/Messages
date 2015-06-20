@@ -3176,3 +3176,1043 @@ Processing by MessagesController#index as HTML
   Rendered messages/index.html.erb within layouts/application (0.8ms)
 Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
   [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:22:00 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 211ms (Views: 194.3ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:22:00 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (7.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$eSwai4OzYRy2uDNiFqh6IezGDQsoKTuxpFnhtgcw7neexjvfN6gri"], ["created_at", "2015-06-20 19:22:00.969476"], ["updated_at", "2015-06-20 19:22:00.969476"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 15ms (ActiveRecord: 7.6ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:22:00 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$tZEI3X/QY85IgTuhQDiVBesKtcUVNZiA.ha.ksyJPlA3Vf4QzhFBy"], ["created_at", "2015-06-20 19:22:01.002083"], ["updated_at", "2015-06-20 19:22:01.002083"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:22:01 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:22:01 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:22:01 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 8ms (Views: 5.5ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:22:50 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 192ms (Views: 176.3ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:22:51 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$s/TBwUwP6kqLuCNbzJy.CeGVd1sqhMtgqUfxOWtqBUFenvubLmixS"], ["created_at", "2015-06-20 19:22:51.015711"], ["updated_at", "2015-06-20 19:22:51.015711"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:22:51 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$d5KsvOqnJ6JcWo85lSTCMOT8.b05Kqn3ktQn3K5ISvW87LELlAiIG"], ["created_at", "2015-06-20 19:22:51.039000"], ["updated_at", "2015-06-20 19:22:51.039000"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:22:51 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:22:51 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:22:51 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 8ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:23:05 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 186ms (Views: 169.7ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:23:05 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$k03QK4lymRbUZVZMwj7Sl.8BpKhFfTpYx1Z7A.0Mzh7sZ7iJNMyxG"], ["created_at", "2015-06-20 19:23:05.739818"], ["updated_at", "2015-06-20 19:23:05.739818"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:23:05 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$EUbfv1oVakCNNUH/c82s0.QGI/Pe2DbTwYZXDwfHJPzs1HT2rT./m"], ["created_at", "2015-06-20 19:23:05.763979"], ["updated_at", "2015-06-20 19:23:05.763979"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:23:05 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:23:05 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:23:05 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (2.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:25:24 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 182ms (Views: 165.7ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:25:24 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$OwsG7nLwAJRv5JHQuvRyGu9ooygLSrL3mVQsAm5q53zCs7PGz0xRy"], ["created_at", "2015-06-20 19:25:24.644831"], ["updated_at", "2015-06-20 19:25:24.644831"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:25:24 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$xfhuXw8MlNVYDaN7mAe.SOBvSpUbFMSmo81mBJ2499BVqPJvI65Qq"], ["created_at", "2015-06-20 19:25:24.669681"], ["updated_at", "2015-06-20 19:25:24.669681"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:25:24 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:25:24 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:25:24 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:25:48 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 185ms (Views: 169.0ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:25:48 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$7kCgZHYpJvo85QOncdLw6eI1UG9eh/hjZHxIZ6xr6lo6rldlRHU.S"], ["created_at", "2015-06-20 19:25:48.940163"], ["updated_at", "2015-06-20 19:25:48.940163"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:25:48 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$WH0k1MMk3Oo8tSBRY8VveuyjI3d8kf2NglktwK3.cY8zQk0F0I0UG"], ["created_at", "2015-06-20 19:25:48.965709"], ["updated_at", "2015-06-20 19:25:48.965709"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:25:48 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:25:48 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:25:48 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:27:34 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 184ms (Views: 167.6ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:27:35 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$t0qfRmGHeNdlDpHRKQm8IuMYFNgh0XZlCbXtB48dOOuH5yMe08MBC"], ["created_at", "2015-06-20 19:27:35.158849"], ["updated_at", "2015-06-20 19:27:35.158849"]]
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:27:35 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$Ukwk7Eq38..Cjbrov1u6vuHHxAAdKqYFW2Yk7kT/i5VjxLQNx8dOq"], ["created_at", "2015-06-20 19:27:35.185278"], ["updated_at", "2015-06-20 19:27:35.185278"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:27:35 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:27:35 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:27:35 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (2.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 7ms (Views: 4.8ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:31:31 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 184ms (Views: 168.5ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:31:31 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$B8DZrxIdw0dsjiQVlPEZZuVcjNgrpTHlMbjyyjCczBwfnekN4aqdi"], ["created_at", "2015-06-20 19:31:31.691896"], ["updated_at", "2015-06-20 19:31:31.691896"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:31:31 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$6.yNnCvUNuVK.7PaY2xsounXUikujHzRURxVHQvRvMyi12zmee4Fy"], ["created_at", "2015-06-20 19:31:31.715924"], ["updated_at", "2015-06-20 19:31:31.715924"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:31:31 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:31:31 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:31:31 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:32:22 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 184ms (Views: 168.1ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:32:23 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$.1qYoCBU.Mh7UNHd8WyBiOjvByjKxZDjpOp4.xWiSHeMWzkfSwna6"], ["created_at", "2015-06-20 19:32:23.068352"], ["updated_at", "2015-06-20 19:32:23.068352"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:32:23 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$R3FH9DHRmq0XuEbC0EGZSuuS/rXkNJWeNv2WO8HoouUAn2ELqHUP."], ["created_at", "2015-06-20 19:32:23.092998"], ["updated_at", "2015-06-20 19:32:23.092998"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:32:23 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:32:23 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:32:23 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 7ms (Views: 4.7ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:32:23 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.2ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:32:23 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:41:30 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 182ms (Views: 166.6ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:41:30 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$gFuYIwLAMJFgXolQFjlV1OyoKWknzXdjEz1DNyIjrM/5gTBVpq6gK"], ["created_at", "2015-06-20 19:41:30.621249"], ["updated_at", "2015-06-20 19:41:30.621249"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:41:30 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$f8TF1o0glBpKyV5hW1P63OI2jEAiyt0MtZW2RqcQlwjjhNgG69S5G"], ["created_at", "2015-06-20 19:41:30.645744"], ["updated_at", "2015-06-20 19:41:30.645744"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:41:30 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:41:30 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:41:30 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 8ms (Views: 4.7ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:41:30 -0300
+Processing by MessagesController#index as HTML
+Redirected to http://www.example.com/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:41:30 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:41:30 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:42:00 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 184ms (Views: 168.3ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:42:01 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$1dg9vp9ySxEZbAv2VhflpecybazEmtK3fTtBUvJwHr.F6zfCJ1TGu"], ["created_at", "2015-06-20 19:42:01.149820"], ["updated_at", "2015-06-20 19:42:01.149820"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:42:01 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$YSLw35IA.91Sx4G9whGbt.oTi/5vwZ1aK9fHcHnyjO.tXDod/6cu6"], ["created_at", "2015-06-20 19:42:01.174343"], ["updated_at", "2015-06-20 19:42:01.174343"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:42:01 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:42:01 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:42:01 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 8ms (Views: 4.3ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:42:01 -0300
+Processing by MessagesController#index as HTML
+Redirected to http://www.example.com/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:42:01 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:42:01 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:42:09 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 187ms (Views: 169.2ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:42:09 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$ZPypHH.lwIHwM03zE1NJ7uWVrcN4IyRovi1R2yVu/uLiP6LvN4gUS"], ["created_at", "2015-06-20 19:42:09.473568"], ["updated_at", "2015-06-20 19:42:09.473568"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 8ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:42:09 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$4k1HiaNO.ISUCiacqBCRXedwQt9GZjZuL3HKHxzxvyuXjlT0OWode"], ["created_at", "2015-06-20 19:42:09.501111"], ["updated_at", "2015-06-20 19:42:09.501111"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:42:09 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:42:09 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:42:09 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:42:09 -0300
+Processing by MessagesController#index as HTML
+Redirected to http://www.example.com/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:42:09 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:42:09 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:43:14 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 190ms (Views: 174.2ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:43:14 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$uUPRxdarx4l/lERrj84XDuOg/m060XLQCzXom/UvBFC9oBVN0iRQe"], ["created_at", "2015-06-20 19:43:14.357189"], ["updated_at", "2015-06-20 19:43:14.357189"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.8ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:43:14 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$9EJ.t2ROwtemxo/PSd3QhebFVIAZBlxjSANQ3Vk4kiuBMC6.0VXxC"], ["created_at", "2015-06-20 19:43:14.386055"], ["updated_at", "2015-06-20 19:43:14.386055"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:43:14 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:43:14 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:43:14 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:43:14 -0300
+Processing by MessagesController#index as HTML
+Redirected to http://www.example.com/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:43:14 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:43:14 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:44:55 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 192ms (Views: 174.7ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:44:55 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$gfVGQ8/vLHQtTZ37vUAT6ufqUuLPdw8HKp7.fi0DYqSArD.bCO932"], ["created_at", "2015-06-20 19:44:55.241807"], ["updated_at", "2015-06-20 19:44:55.241807"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:44:55 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$TWjcPUp8kt7uxMairxUdreBEaGgeoz3/7S4xsHR/Dnrn3TEA/d1x6"], ["created_at", "2015-06-20 19:44:55.266191"], ["updated_at", "2015-06-20 19:44:55.266191"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:44:55 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:44:55 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:44:55 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 5.4ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:44:55 -0300
+Processing by MessagesController#index as HTML
+Redirected to http://www.example.com/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:44:55 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:44:55 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:45:20 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 192ms (Views: 172.0ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:45:20 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$YwTZnUzFMzpJWguF8tQQie775MOwvstihu5DhPHJodRHH/RxzI6v2"], ["created_at", "2015-06-20 19:45:20.726899"], ["updated_at", "2015-06-20 19:45:20.726899"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.6ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:45:20 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$Oj4Ivt7BT7zfEd9nLBQj0OngIQqHUG4vESuJlVJsZi2jt4PU2IMTW"], ["created_at", "2015-06-20 19:45:20.753804"], ["updated_at", "2015-06-20 19:45:20.753804"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:45:20 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:45:20 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:45:20 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:45:20 -0300
+Processing by MessagesController#index as HTML
+Redirected to http://www.example.com/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:45:20 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:45:20 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:45:46 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 194ms (Views: 177.2ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:45:46 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$tLYSyTyXGxehYLYtZt2byO9v2i7AM5NbrZgLS5D5Qvu6rIJg8goUO"], ["created_at", "2015-06-20 19:45:46.990118"], ["updated_at", "2015-06-20 19:45:46.990118"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:45:46 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$jG40Lev5Uxun5q0PO0OHhu02h9gRD18CZasneEYxVUb85X7r1oQQq"], ["created_at", "2015-06-20 19:45:47.013197"], ["updated_at", "2015-06-20 19:45:47.013197"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:45:47 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:45:47 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:45:47 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:45:47 -0300
+Processing by MessagesController#index as HTML
+Redirected to http://www.example.com/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:45:47 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:45:47 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:45:54 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 185ms (Views: 169.0ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:45:54 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$0PYnTiwr4QzBSB1QBL.bAel5w4ZpF9SBFCOonhtkbAG./LBtE37/G"], ["created_at", "2015-06-20 19:45:54.743913"], ["updated_at", "2015-06-20 19:45:54.743913"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:45:54 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$aMRC/radgtc3j28hFWFyl.3dsD7yNSLxEoq36EYqmiD.5tbP3mma."], ["created_at", "2015-06-20 19:45:54.768638"], ["updated_at", "2015-06-20 19:45:54.768638"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:45:54 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:45:54 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:45:54 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 8ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:45:54 -0300
+Processing by MessagesController#index as HTML
+Redirected to http://www.example.com/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:45:54 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:45:54 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:46:26 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 189ms (Views: 172.6ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:46:26 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$yV5VHh0F/SwZx/Rbfx3FKe93olZACew7S3gCghGky6dnNfAajCda6"], ["created_at", "2015-06-20 19:46:26.964800"], ["updated_at", "2015-06-20 19:46:26.964800"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:46:26 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$w3cnPtYoPD0p6Ex1zIE.8OeL5bbjYIFCOuqtZSMLS68L/2JoZtTDq"], ["created_at", "2015-06-20 19:46:26.990622"], ["updated_at", "2015-06-20 19:46:26.990622"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:46:26 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:46:27 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:46:27 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.3ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 5.5ms | ActiveRecord: 0.5ms)
+  [1m[35m (0.3ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:46:27 -0300
+Processing by MessagesController#index as HTML
+Redirected to http://www.example.com/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:46:27 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.0ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:46:27 -0300
+Processing by MessagesController#index as HTML
+Redirected to http://www.example.com/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:46:27 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Started GET "/singup" for 127.0.0.1 at 2015-06-20 16:47:18 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 191ms (Views: 175.0ms | ActiveRecord: 0.3ms)
+Started POST "/users" for 127.0.0.1 at 2015-06-20 16:47:19 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "user"=>{"first_name"=>"Fillipe", "last_name"=>"De Menezes", "email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$ODz4S4oYK2jrRPhaBgLyNOTQX19CcZMoaHqyHbjDBuBx5Yel0Q0ZS"], ["created_at", "2015-06-20 19:47:19.013134"], ["updated_at", "2015-06-20 19:47:19.013134"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/
+Completed 302 Found in 6ms (ActiveRecord: 0.5ms)
+Started GET "/" for 127.0.0.1 at 2015-06-20 16:47:19 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Fillipe"], ["last_name", "De Menezes"], ["email", "fillipe@yahoo.com.br"], ["password_digest", "$2a$04$y/Jyq61g5zYKvRuJYkFBNuDWlkmJIW1pUplxMLVWMrY8opTbXQSqu"], ["created_at", "2015-06-20 19:47:19.036201"], ["updated_at", "2015-06-20 19:47:19.036201"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:47:19 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+Started POST "/login" for 127.0.0.1 at 2015-06-20 16:47:19 -0300
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "session"=>{"email"=>"fillipe@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT 1[0m  [["email", "fillipe@yahoo.com.br"]]
+Redirected to http://www.example.com/messages
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms)
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:47:19 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 8ms (Views: 4.6ms | ActiveRecord: 0.4ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/messages" for 127.0.0.1 at 2015-06-20 16:47:19 -0300
+Processing by MessagesController#index as HTML
+Redirected to http://www.example.com/login
+Filter chain halted as :require_user rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+Started GET "/login" for 127.0.0.1 at 2015-06-20 16:47:19 -0300
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.1ms)[0m  rollback transaction

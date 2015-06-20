@@ -21,3 +21,11 @@ Feature: Login
     And I fill the password field with "1234567"
     And I click the Button "Login"
     Then I should be logged in with email "fillipe@yahoo.com.br"
+
+  Scenario Outline: The user is redirect to the main page if he is not logged in
+    Given I am not logged in
+    When I try to access "<paths>"
+    And I should see the message "You must loggin first"
+    Examples:
+      | paths |
+      | /messages |
