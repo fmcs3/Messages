@@ -9233,3 +9233,176 @@ Processing by MessagesController#index as HTML
   Rendered layouts/_top_navigation.html.erb (0.3ms)
   Rendered layouts/_bot_navigation.html.erb (0.0ms)
 Completed 200 OK in 167ms (Views: 163.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2015-06-23 16:14:38 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.7ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (14.9ms)
+  Rendered layouts/_top_navigation.html.erb (0.4ms)
+  Rendered layouts/_bot_navigation.html.erb (0.1ms)
+Completed 200 OK in 152ms (Views: 143.9ms | ActiveRecord: 5.1ms)
+
+
+Started DELETE "/delete" for 127.0.0.1 at 2015-06-23 16:14:40 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"n3a+6yc+zU7JMk3OKTu4BbGNeUMazVISqMy+W84cJIq4oxuuxp2H+ZVE+EwJOk4NIHWDZ5bm5ymayyxmFLqJsA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-23 16:14:40 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_top_navigation.html.erb (0.4ms)
+  Rendered layouts/_bot_navigation.html.erb (0.1ms)
+Completed 200 OK in 151ms (Views: 150.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-23 16:14:42 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_top_navigation.html.erb (0.4ms)
+  Rendered layouts/_bot_navigation.html.erb (0.1ms)
+Completed 200 OK in 167ms (Views: 166.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-23 16:14:44 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_top_navigation.html.erb (0.4ms)
+  Rendered layouts/_bot_navigation.html.erb (0.1ms)
+Completed 200 OK in 172ms (Views: 170.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-23 16:28:49 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_top_navigation.html.erb (5.8ms)
+  Rendered layouts/_bot_navigation.html.erb (2.2ms)
+Completed 200 OK in 725ms (Views: 709.9ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/delete" for 127.0.0.1 at 2015-06-23 16:28:53 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6YfhEQZo+61jHjZ8kQQc1OZ44S9lZiHwAJTPwMy37oHOUkRU58uxGj9og/6xBercd4AbC+lNlMsyk139FhFDuw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-23 16:28:53 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_top_navigation.html.erb (0.6ms)
+  Rendered layouts/_bot_navigation.html.erb (0.1ms)
+Completed 200 OK in 175ms (Views: 173.8ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/delete" for 127.0.0.1 at 2015-06-23 16:28:55 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DQ5NoJSZDwswKy2L+tufBKdMDbnTwyZGb0g0uwm0h/Uq2+jldTpFvGxdmAna2mkMNrT3nV/ok31dT6aG0xIqzw=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-23 16:28:56 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.1ms)
+  Rendered layouts/_top_navigation.html.erb (0.4ms)
+  Rendered layouts/_bot_navigation.html.erb (0.1ms)
+Completed 200 OK in 178ms (Views: 176.4ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/delete" for 127.0.0.1 at 2015-06-23 16:29:28 -0300
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"qNsc8T5H3vYYTFz+wCcp++rqa5RtcsvINkSAfAod1kqPDrm03+SUQUQ66XzgJt/zexKRsOFZfvMEQxJB0Lt7cA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-23 16:29:28 -0300
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+  Rendered layouts/_top_navigation.html.erb (0.3ms)
+  Rendered layouts/_bot_navigation.html.erb (0.1ms)
+Completed 200 OK in 173ms (Views: 172.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/singup" for 127.0.0.1 at 2015-06-23 16:29:30 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (13.5ms)
+  Rendered layouts/_top_navigation.html.erb (1.0ms)
+  Rendered layouts/_bot_navigation.html.erb (0.3ms)
+Completed 200 OK in 168ms (Views: 150.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-23 16:44:04 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_top_navigation.html.erb (2.9ms)
+  Rendered layouts/_bot_navigation.html.erb (1.5ms)
+Completed 200 OK in 447ms (Views: 436.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/singup" for 127.0.0.1 at 2015-06-23 16:44:06 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (21.0ms)
+  Rendered layouts/_top_navigation.html.erb (1.0ms)
+  Rendered layouts/_bot_navigation.html.erb (0.4ms)
+Completed 200 OK in 221ms (Views: 195.0ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/singup" for 127.0.0.1 at 2015-06-23 16:44:08 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_top_navigation.html.erb (0.3ms)
+  Rendered layouts/_bot_navigation.html.erb (0.1ms)
+Completed 200 OK in 141ms (Views: 140.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-23 17:34:36 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (33.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_top_navigation.html.erb (3.1ms)
+  Rendered layouts/_bot_navigation.html.erb (1.5ms)
+Completed 200 OK in 857ms (Views: 793.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/singup" for 127.0.0.1 at 2015-06-23 17:34:40 -0300
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (73.7ms)
+  Rendered layouts/_top_navigation.html.erb (1.2ms)
+  Rendered layouts/_bot_navigation.html.erb (0.4ms)
+Completed 200 OK in 374ms (Views: 252.2ms | ActiveRecord: 87.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-06-23 17:34:53 -0300
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3Rkt5XBH164i4qkRHUIl2ICJli3i/KLzqdHgX7R3kirhGZdmiFIsmAWLZ2m69MalRolpVHJ53kYcX6zOVE3t0A==", "user"=>{"first_name"=>"aaa", "last_name"=>"aaa", "email"=>"aaa@yahoo.com.br", "password"=>"[FILTERED]"}, "commit"=>"Create an account"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (219.5ms)[0m  [1mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["first_name", "aaa"], ["last_name", "aaa"], ["email", "aaa@yahoo.com.br"], ["password_digest", "$2a$10$tw/mZ9KOpGeOAiS7UYlV1uwPHX/U0FePJFbkPoHlW14t7oF8SwiGG"], ["created_at", "2015-06-23 20:34:54.003157"], ["updated_at", "2015-06-23 20:34:54.003157"]]
+  [1m[35m (59.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 395ms (ActiveRecord: 279.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-23 17:34:54 -0300
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 2]]
+  Rendered home/index.html.erb within layouts/application (45.8ms)
+  Rendered layouts/_top_navigation.html.erb (0.4ms)
+  Rendered layouts/_bot_navigation.html.erb (0.1ms)
+Completed 200 OK in 184ms (Views: 182.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2015-06-23 17:34:57 -0300
+Processing by MessagesController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mMessage Load (54.0ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (157.4ms)
+  Rendered layouts/_top_navigation.html.erb (0.3ms)
+  Rendered layouts/_bot_navigation.html.erb (0.0ms)
+Completed 200 OK in 339ms (Views: 264.5ms | ActiveRecord: 57.3ms)
