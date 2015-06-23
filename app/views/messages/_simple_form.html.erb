@@ -1,0 +1,21 @@
+    <div class="section">
+          <div class="container">
+            <div class="row">
+                  <div class="form-group">
+                    <div class="center-block">
+                        <%= form_for(@message) do |f| %>
+
+                          <%= f.label :title  %>
+                          <%= f.text_field :title %>
+
+                          <%= f.label :message %>
+                          <%= f.text_field :message %>
+
+                          <%= f.submit nil, :class => 'btn btn-success' %>
+
+                        <% end %>
+                    </div>
+                  </div>
+              </div>
+          </div>
+        </div>
