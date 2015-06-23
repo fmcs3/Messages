@@ -13,8 +13,8 @@
   <br>
   <br>
   <br>
-  <%= render :partial => 'simple_form' %>
 
+    <%= render :partial => 'simple_form' %>
 
 </div>
 
@@ -29,21 +29,21 @@
     </div>
   </div>
 </div>
-<div class="section">
-  <div class="container">
-    <div class="row">
-      <div class="center-block">
 
-        <% @messages.each  do |m| %>
-            <%= label_tag m.title %>
-            <%= label_tag m.message %>
-            <br>
+
+<table class="table table-striped">
+        <thead>
+          <tr>
+              <th><%= :title %></th>
+              <th><%= :message %></th>
+            </tr>
+        </thead>
+    <tbody>
+        <% @messages.each do |message| %>
+         <tr>
+             <td><%= message.title %></td>
+             <td><%= message.message %></td>
+         </tr>
         <% end %>
-
-      </div>
-    </div>
-  </div>
-</div>
-</body>
-
-</html>
+    </tbody>
+</table>
