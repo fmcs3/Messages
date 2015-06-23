@@ -8,13 +8,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def current_user
-    def raise_and_rescue
-      begin
-        @current_user ||= User.find(session[:user_id]) if session[:user_id]
-      rescue
-        session[:user_id] = nil
-      end
-    end
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
   def require_user
