@@ -1,15 +1,8 @@
-<div class="login">
-  <div class="container">
-    <div class="form">
 
-    <h1>Log In</h1>
+<h1>Log In</h1>
 
-        <%= form_for(:session, url: login_path) do |f|%>
-          <%= f.text_field :email, :placeholder => "Email" %>
-          <%= f.password_field :password, :placeholder => "Password"%>
-          <%= f.submit "Login", class: "btn-submit", method: "Create" %>
-        <% end %>
-
-    </div>
-  </div>
-</div>
+<%= form_for(:session, url: login_path) do |f|%>
+    <%= f.text_field :email, :placeholder => "Email" %>
+    <%= f.password_field :password, :placeholder => "Password"%>
+    <%= f.submit "Login", class: "btn-submit", method: "Create" %>
+<% end %>
