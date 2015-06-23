@@ -1,0 +1,37 @@
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <%= link_to "Home", '/', class: "navbar-brand" %>
+    </div> <!-- end div class="navbar-header" -->
+
+    <div class="collapse navbar-collapse">
+
+        <!-- Rails CODE -->
+        <%if current_user %>
+            <ul class="nav navbar-nav">
+              <li><%= link_to "Messages", '/messages' %></li>
+            </ul>
+
+            <ul class="nav navbar-nav pull-right">
+              <li><%= link_to "Profile", '/' %></li>
+              <li><%= link_to "Log Out", logout_path, method: "delete"%></li>
+            </ul>
+        <%else%>
+            <ul class="nav navbar-nav pull-right">
+              <li><%= link_to "Log In", login_path %></li>
+              <li><%= link_to "Sing Up", singup_path %></li>
+            </ul>
+        <% end %>
+        <!-- Rails CODE END -->
+
+    </div> <!-- end div class="collapse navbar-collapse" -->
+  </div> <!-- end div class="container" -->
+
+
+
+

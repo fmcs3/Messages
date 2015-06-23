@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :messages
 
-  get '/' => 'sessions#new'
+  get '/' => 'home#index'
 
   get 'singup' => 'users#new'
   resources :users

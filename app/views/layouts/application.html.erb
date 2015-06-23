@@ -8,23 +8,15 @@
 </head>
 <body>
 
-    <%if current_user%>
-        <ul>
-          <li><%= current_user.email%></li>
-          <li><%= link_to "Log Out", logout_path, method: "delete"%></li>
-        </ul>
-    <%else%>
-        <ul>
-          <li><%= link_to "Log In", login_path %></li>
-          <li><%= link_to "Sing Up", singup_path %></li>
-        </ul>
-    <% end %>
+    <div class="container">
 
-    <% if flash[:notice] %>
-        <div class="notice"><%= flash[:notice] %></div>
-    <% end %>
+      <%= render :partial => 'layouts/top_navigation' %>
 
-    <%= yield %>
+      <%= yield %>
+
+      <%= render :partial => 'layouts/bot_navigation' %>
+
+    </div>
 
 </body>
 </html>
