@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :users
 
   get 'login' => 'sessions#new', as: :login
-  post 'login' => 'sessions#create'
+  post 'login/create' => 'sessions#create', as: :new_login
   delete 'delete' => 'sessions#destroy', as: :logout
 end

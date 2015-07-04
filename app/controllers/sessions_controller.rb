@@ -5,13 +5,13 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by_email(params[:session][:email])
+    flash[:note] = params[:session][:email]
 
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       redirect_to '/messages'
     else
-      flash[:note] = "Authentication Failed!"
-      redirect_to 'login'
+      redirect_to '/login'
     end
   end
 

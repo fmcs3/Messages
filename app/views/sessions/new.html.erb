@@ -1,20 +1,18 @@
+<% if flash[:error] %>
+  <p><%= flash[:error]%></p>
+<% end %>
+
 <div class="section">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <form role="form">
-          <div class="form-group">
-            <%= form_for(:session, url: login_path) do |f|%>
-                <%= f.text_field :email, :placeholder => "Email" %>
+            <%= form_for(:session, url: new_login_path) do |f| %>
+                <%= f.email_field :email, :placeholder => "Email" %>
                 <%= f.password_field :password, :placeholder => "Password"%>
-                <%= f.submit "Login", class: "btn-submit", method: "Create" %>
+                <%= f.submit "Login", class: "btn btn-default"%>
             <% end %>
-          </div>
-          <button type="submit" class="btn btn-default">Login</button>
-        </form>
       </div>
     </div>
   </div>
 </div>
 </body>
-

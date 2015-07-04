@@ -26,20 +26,6 @@
   </div>
 </div>
 
-
-<table class="table table-striped">
-        <thead>
-          <tr>
-              <th><%= :title %></th>
-              <th><%= :message %></th>
-            </tr>
-        </thead>
-    <tbody>
-        <% @messages.each do |message| %>
-         <tr>
-             <td><%= message.title %></td>
-             <td><%= message.message %></td>
-         </tr>
-        <% end %>
-    </tbody>
-</table>
+<div id="messages">
+    <%= render :partial => 'messages' %>
+</div>
